@@ -12,7 +12,7 @@ env:
 phases:
   install:
     runtime-versions:
-      python: 3.7
+      python: 3.9
     on-failure: ABORT
     commands:
       - tf_version=$TERRAFORM_VERSION
@@ -26,8 +26,8 @@ phases:
   build:
     on-failure: ABORT
     commands:
-      - cd "CODEBUILD_SRC_DIR/terraform-manifests"
-      - ls -lrt "CODEBUILD_SRC_DIR/terraform-manifests"
+      - cd "$CODEBUILD_SRC_DIR/terraform-manifests"
+      - ls -lrt "$CODEBUILD_SRC_DIR/terraform-manifests"
       - terraform --version
       - terraform init -input=false -backend-config=stag.conf
       - terraform fmt

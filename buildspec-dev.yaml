@@ -29,7 +29,7 @@ phases:
       - cd "$CODEBUILD_SRC_DIR/terraform-manifests"
       - ls -lrt "$CODEBUILD_SRC_DIR/terraform-manifests"
       - terraform --version
-      - echo $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY
+      - echo $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY aws sts get-caller-identity
       - terraform init -input=false --backend-config=dev.conf
       - terraform fmt
       - terraform validate

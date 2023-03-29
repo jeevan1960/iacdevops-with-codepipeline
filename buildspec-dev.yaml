@@ -29,8 +29,8 @@ phases:
       - cd "$CODEBUILD_SRC_DIR/terraform-manifests"
       - ls -lrt "$CODEBUILD_SRC_DIR/terraform-manifests"
       - terraform --version
-      - terraform init -input=false --backend-config=dev.conf
       - echo $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY
+      - terraform init -input=false --backend-config=dev.conf
       - terraform fmt
       - terraform validate
       - terraform plan -input=false -lock=false -var-file=dev.tfvars

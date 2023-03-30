@@ -19,6 +19,6 @@ vpc_enable_nat_gateway = true
 vpc_single_nat_gateway = true
 
 # DNS name
-dns_name = "stagedemo5.devopsincloud.com" 
+dns_name = "stagedemo5.tulika.link" 
 
 # terraform apply -input=false -var-file=stag.tfvars -auto-approve
